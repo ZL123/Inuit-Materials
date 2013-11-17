@@ -7,6 +7,8 @@ An addon mod to Millénaire
 
 Sodding spade: This tool changes placed plank blocks into their sod form while deleting a dirt block in the inventory, will not work without a dirt block in the inventory. No crafting recipe.
 
+http://i46.photobucket.com/albums/f130/felinoel/Minecraft/soddingtool_zps495cf12e.png
+
 http://www.youtube.com/watch?v=7pwrRcxu2tM
 
 
@@ -38,6 +40,8 @@ http://i46.photobucket.com/albums/f130/felinoel/Minecraft/furcoat_2_zpsf9ed9b4d.
 
 
 Ukkungawok: A bow, not sure what to make it do, what can it be made to do? No crafting recipe.
+
+http://i46.photobucket.com/albums/f130/felinoel/Minecraft/ukbow_zps533ebd5b.png
 
 
 
