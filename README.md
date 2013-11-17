@@ -45,4 +45,10 @@ http://i46.photobucket.com/albums/f130/felinoel/Minecraft/ukbow_zps533ebd5b.png
 
 
 
-Carving: A small fish-shaped image using the bone-like texture of the mushroom blocks. No crafting recipe.
+Carving: A small fish-shaped entity using the bone-like texture of the mushroom blocks. No crafting recipe.
+
+http://i46.photobucket.com/albums/f130/felinoel/Minecraft/carvingtexture_zps031a752a.png
+
+This fish carving is of a simplistic and rounded (but blocky) fish "standing up" with the bottom of the fish flattened so that it stands. It is fairly simplistic with rounded edges but blocky because it is Minecraft. 
+If possible it is to be centered when placed like the flower and unlike the Portal Gun Mod radio but if not, then have it spawn like an invisible rail underneath it to keep it centered like the minecart.
+The face of the fish is directed towards the player when placing it.
