@@ -31,6 +31,10 @@ http://i46.photobucket.com/albums/f130/felinoel/Minecraft/hide4.png
 
 Fur Hood, Fur Coat, Fur Leggings: Just gold armor, in every way except the name and texture. No crafting recipe.
 
+http://i46.photobucket.com/albums/f130/felinoel/Minecraft/furcoat_1_zps490ac72c.png
+
+http://i46.photobucket.com/albums/f130/felinoel/Minecraft/furcoat_2_zpsf9ed9b4d.png
+
 
 
 Ukkungawok: A bow, not sure what to make it do, what can it be made to do? No crafting recipe.
