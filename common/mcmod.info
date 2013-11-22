@@ -1,0 +1,24 @@
+[
+{
+	"modid": "InuitMaterials",
+	"name": "Inuit Materials",
+	"version": "0.0.0a",
+	"mcversion": "1.6.2",
+	"description": "An addon mod to Millénaire requiring the Inuits culture from the Millénaire Library.",
+	"authorList": [
+	  "felinoel",
+	  "ZL123"
+	],
+	"credits": "Based on the Inuits culture made by felinoel who requested ZL123 to make this mod!",
+	"logoFile": "",
+	"url": "",
+	"updateUrl": "",
+	"parent": "",
+	"requiredMods": [
+    "Forge@[9.10.1.871,)",
+    "FML@[6.2.62.871,)"
+    ],
+	"screenshots": [],
+	"dependencies": []
+}
+]
