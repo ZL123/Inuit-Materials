@@ -21,6 +21,8 @@ public class ConfigLoader {
 		ConfigSettings.spadeSodID = config.getItem("Sodding Spade ID", DefaultIDs.spadeSodID).getInt();
 		
 		
+		//Other Numbers
+		ConfigSettings.spadeSodDurability = config.get("Durability", "Sodding Spade Durability", 512).getInt();
 		
 	}
 	

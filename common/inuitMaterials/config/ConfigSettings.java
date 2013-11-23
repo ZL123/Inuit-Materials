@@ -9,6 +9,8 @@ public class ConfigSettings {
 	public static int spadeSodID;
 	public static int ukkungawokID;
 	
+	//Other numbers
+	public static int spadeSodDurability;
 	
 	
 }

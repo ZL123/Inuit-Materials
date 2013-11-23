@@ -8,6 +8,8 @@ public class Reference {
     public static final String CHANNEL_NAME = MOD_ID;
     public static final String DEPENDENCIES = "required-after:Forge@[9.10.1.871,)";
     
+    public static final int SET_BLOCK_FLAG = 3;
+    
     
     
 	
