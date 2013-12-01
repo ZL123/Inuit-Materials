@@ -8,6 +8,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.EnumAction;
 import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
@@ -30,7 +31,7 @@ public class ItemIceBow extends ItemBow {
 		maxStackSize = 1;
 		setMaxDamage(ConfigSettings.iceBowDurability - 1);
 		isDamageable();
-		this.setCreativeTab(CreativeTabs.tabCombat);	
+		this.setCreativeTab(CreativeTabs.tabCombat);
 		setFull3D();
 	
 	}
@@ -151,6 +152,27 @@ public class ItemIceBow extends ItemBow {
 	public String getItemDisplayName(ItemStack stack)
     {
         return EnumChatFormatting.BLUE + super.getItemDisplayName(stack);
+    }
+	
+	@SideOnly(Side.CLIENT)
+	public Icon getIcon(ItemStack stack, int renderPass, EntityPlayer player, ItemStack usingItem, int useRemaining)
+    {
+		if (usingItem != null)
+        {
+            int k = usingItem.getMaxItemUseDuration() - useRemaining;
+            if (k >= 18) return iconArray[2];
+            if (k >  13) return iconArray[1];
+            if (k >   0) return iconArray[0];
+        }
+        return getIcon(stack, renderPass);
+    }
+
+	public ItemStack onEaten(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer) {
+        return par1ItemStack;
+    }
+	
+	public EnumAction getItemUseAction(ItemStack par1ItemStack) {
+        return EnumAction.bow;
     }
 	
 }
