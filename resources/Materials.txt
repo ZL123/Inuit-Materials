@@ -1,20 +1,21 @@
-Sodding spade: This tool changes placed plank blocks into their sod form while deleting a dirt block in the inventory, will not work without a dirt block in the inventory. No crafting recipe.
+Sodding spade: This tool changes placed plank blocks into their sod form while deleting a dirt block in the inventory, will not work without a dirt block in the inventory. No crafting recipe. ✓
 
-http://i46.photobucket.com/albums/f130/felinoel/Minecraft/soddingtool_zps495cf12e.png
+http://i46.photobucket.com/albums/f130/felinoel/Minecraft/soddingtool_zps495cf12e.png ✓
 
-http://www.youtube.com/watch?v=7pwrRcxu2tM
+http://www.youtube.com/watch?v=7pwrRcxu2tM ✓
 
 
 
-Sod Planks: Comes in a variety of textures, the oak planks make sod oak, the birch planks make sod birch, and etc. Can be cut with an axe like wood but cannot be burnt. Temporarily have the new oak become pine and the acacia become junglewood until textures are made for them.
+Sod Planks: Comes in a variety of textures, the oak planks make sod oak, the birch planks make sod birch, and etc. Can be cut with an axe like wood but cannot be burnt. ✓
+Temporarily have the new oak become pine and the acacia become junglewood until textures are made for them.
 
-http://i46.photobucket.com/albums/f130/felinoel/Minecraft/sodpine.png
+http://i46.photobucket.com/albums/f130/felinoel/Minecraft/sodpine.png ✓
 
-http://i46.photobucket.com/albums/f130/felinoel/Minecraft/sodoak.png
+http://i46.photobucket.com/albums/f130/felinoel/Minecraft/sodoak.png ✓
 
-http://i46.photobucket.com/albums/f130/felinoel/Minecraft/sodjunglewood.png
+http://i46.photobucket.com/albums/f130/felinoel/Minecraft/sodjunglewood.png ✓
 
-http://i46.photobucket.com/albums/f130/felinoel/Minecraft/sodbirch.png
+http://i46.photobucket.com/albums/f130/felinoel/Minecraft/sodbirch.png ✓
 
 
 
@@ -32,9 +33,9 @@ http://i46.photobucket.com/albums/f130/felinoel/Minecraft/furcoat_2_zpsf9ed9b4d.
 
 
 
-Ukkungawok: A bow that's more enchantable and makes any recipient of an arrow shot from this bow weak.
+Ukkungawok: A bow that's more enchantable and makes any recipient of an arrow shot from this bow weak. ✓
 
-http://i46.photobucket.com/albums/f130/felinoel/Minecraft/ukbow_zps533ebd5b.png
+http://i46.photobucket.com/albums/f130/felinoel/Minecraft/ukbow_zps533ebd5b.png ✓
 
 
 
