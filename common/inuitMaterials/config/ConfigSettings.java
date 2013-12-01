@@ -7,10 +7,12 @@ public class ConfigSettings {
 	
 	//Item IDs
 	public static int spadeSodID;
-	public static int ukkungawokID;
+	public static int iceBowID;
+	public static int iceArrowID;
 	
-	//Other numbers
+	//Durability
 	public static int spadeSodDurability;
+	public static int iceBowDurability;
 	
 	
 }

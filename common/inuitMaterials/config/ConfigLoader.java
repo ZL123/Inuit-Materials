@@ -19,10 +19,14 @@ public class ConfigLoader {
 		
 		//Item IDs
 		ConfigSettings.spadeSodID = config.getItem("Sodding Spade ID", DefaultIDs.spadeSodID).getInt();
+		ConfigSettings.iceBowID = config.getItem("Ukkungawok ID", DefaultIDs.iceBowID).getInt();
+		ConfigSettings.iceArrowID = config.getItem("Frozen Arrow ID", DefaultIDs.iceArrowID).getInt();
 		
 		
-		//Other Numbers
-		ConfigSettings.spadeSodDurability = config.get("Durability", "Sodding Spade Durability", 512).getInt();
+		//Durability
+		ConfigSettings.spadeSodDurability = config.get("Durability", "Sodding Spade Durability", DefaultIDs.spadeSodDurability).getInt();
+		ConfigSettings.iceBowDurability = config.get("Durability", "Ukkungawok Durability", DefaultIDs.iceBowDurability).getInt();
+		
 		
 	}
 	

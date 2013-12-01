@@ -3,6 +3,7 @@ package inuitMaterials.lang;
 import inuitMaterials.block.BlockSodPlank;
 import inuitMaterials.block.ModBlocks;
 import inuitMaterials.item.ModItems;
+import inuitMaterials.lib.Reference;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
@@ -21,6 +22,11 @@ public class Register {
 		
 		//Items
 		LanguageRegistry.addName(ModItems.itemSpadeSodding, "Sodding Spade");
+		LanguageRegistry.addName(ModItems.itemIceBow, "Ukkungawok");
+		LanguageRegistry.addName(ModItems.itemIceArrow, "Frozen Arrow");
+		
+		//Entities
+		LanguageRegistry.instance().addStringLocalization("entity." + Reference.MOD_ID + ".iceArrow.name", "Frozen Arrow");
 		
 		
 	}
