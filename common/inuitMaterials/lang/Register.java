@@ -24,6 +24,7 @@ public class Register {
 		LanguageRegistry.addName(ModItems.itemSpadeSodding, "Sodding Spade");
 		LanguageRegistry.addName(ModItems.itemIceBow, "Ukkungawok");
 		LanguageRegistry.addName(ModItems.itemIceArrow, "Frozen Arrow");
+		LanguageRegistry.addName(ModItems.itemHide, "Hide (WIP)");
 		
 		//Entities
 		LanguageRegistry.instance().addStringLocalization("entity." + Reference.MOD_ID + ".iceArrow.name", "Frozen Arrow");

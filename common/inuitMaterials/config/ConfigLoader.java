@@ -21,6 +21,7 @@ public class ConfigLoader {
 		ConfigSettings.spadeSodID = config.getItem("Sodding Spade ID", DefaultIDs.spadeSodID).getInt();
 		ConfigSettings.iceBowID = config.getItem("Ukkungawok ID", DefaultIDs.iceBowID).getInt();
 		ConfigSettings.iceArrowID = config.getItem("Frozen Arrow ID", DefaultIDs.iceArrowID).getInt();
+		ConfigSettings.hideID = config.getItem("Hide ID", DefaultIDs.hideID).getInt();
 		
 		
 		//Durability

@@ -9,6 +9,7 @@ public class ConfigSettings {
 	public static int spadeSodID;
 	public static int iceBowID;
 	public static int iceArrowID;
+	public static int hideID;
 	
 	//Durability
 	public static int spadeSodDurability;
