@@ -32,26 +32,39 @@ public class ItemSpadeSodding extends ItemIM {
 			int meta = world.getBlockMetadata(x, y, z);
 			
 			if (id == Block.planks.blockID) {
-				
-				if (meta == BlockSodPlank.oakMetaNumber) {
-					world.setBlock(x, y, z, ModBlocks.blockSodPlank.blockID, BlockSodPlank.oakMetaNumber, Reference.SET_BLOCK_FLAG);
-					stack.damageItem(1, entityplayer);
-					return true;
-				}
-				else if (meta == BlockSodPlank.pineMetaNumber) {
-					world.setBlock(x, y, z, ModBlocks.blockSodPlank.blockID, BlockSodPlank.pineMetaNumber, Reference.SET_BLOCK_FLAG);
-					stack.damageItem(1, entityplayer);
-					return true;
-				}
-				else if (meta == BlockSodPlank.birchMetaNumber) {
-					world.setBlock(x, y, z, ModBlocks.blockSodPlank.blockID, BlockSodPlank.birchMetaNumber, Reference.SET_BLOCK_FLAG);
-					stack.damageItem(1, entityplayer);
-					return true;
-				}
-				else if (meta == BlockSodPlank.jungleMetaNumber) {
-					world.setBlock(x, y, z, ModBlocks.blockSodPlank.blockID, BlockSodPlank.jungleMetaNumber, Reference.SET_BLOCK_FLAG);
-					stack.damageItem(1, entityplayer);
-					return true;
+				if (entityplayer.inventory.hasItem(Block.dirt.blockID) || entityplayer.capabilities.isCreativeMode) {
+					if (meta == BlockSodPlank.oakMetaNumber) {
+						world.setBlock(x, y, z, ModBlocks.blockSodPlank.blockID, BlockSodPlank.oakMetaNumber, Reference.SET_BLOCK_FLAG);
+						stack.damageItem(1, entityplayer);
+						if (!entityplayer.capabilities.isCreativeMode) {
+							entityplayer.inventory.consumeInventoryItem(Block.dirt.blockID);
+						}
+						return true;
+					}
+					else if (meta == BlockSodPlank.pineMetaNumber) {
+						world.setBlock(x, y, z, ModBlocks.blockSodPlank.blockID, BlockSodPlank.pineMetaNumber, Reference.SET_BLOCK_FLAG);
+						stack.damageItem(1, entityplayer);
+						if (!entityplayer.capabilities.isCreativeMode) {
+							entityplayer.inventory.consumeInventoryItem(Block.dirt.blockID);
+						}
+						return true;
+					}
+					else if (meta == BlockSodPlank.birchMetaNumber) {
+						world.setBlock(x, y, z, ModBlocks.blockSodPlank.blockID, BlockSodPlank.birchMetaNumber, Reference.SET_BLOCK_FLAG);
+						stack.damageItem(1, entityplayer);
+						if (!entityplayer.capabilities.isCreativeMode) {
+							entityplayer.inventory.consumeInventoryItem(Block.dirt.blockID);
+						}
+						return true;
+					}
+					else if (meta == BlockSodPlank.jungleMetaNumber) {
+						world.setBlock(x, y, z, ModBlocks.blockSodPlank.blockID, BlockSodPlank.jungleMetaNumber, Reference.SET_BLOCK_FLAG);
+						stack.damageItem(1, entityplayer);
+						if (!entityplayer.capabilities.isCreativeMode) {
+							entityplayer.inventory.consumeInventoryItem(Block.dirt.blockID);
+						}
+						return true;
+					}
 				}
 			}
 		}
