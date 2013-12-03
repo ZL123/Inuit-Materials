@@ -22,6 +22,10 @@ public class ConfigLoader {
 		ConfigSettings.iceBowID = config.getItem("Ukkungawok ID", DefaultIDs.iceBowID).getInt();
 		ConfigSettings.iceArrowID = config.getItem("Frozen Arrow ID", DefaultIDs.iceArrowID).getInt();
 		ConfigSettings.hideID = config.getItem("Hide ID", DefaultIDs.hideID).getInt();
+		ConfigSettings.furHatID = config.getItem("Fur Hat ID", DefaultIDs.furHatID).getInt();
+		ConfigSettings.furCoatID = config.getItem("Fur Coat ID", DefaultIDs.furCoatID).getInt();
+		ConfigSettings.furPantsID = config.getItem("Fur Pants ID", DefaultIDs.furPantsID).getInt();
+		ConfigSettings.furBootsID = config.getItem("Fur Boots ID", DefaultIDs.furBootsID).getInt();
 		
 		
 		//Durability
