@@ -17,8 +17,14 @@ public class ItemFurCoat extends ItemArmor {
 	}
 	
 	@SideOnly(Side.CLIENT)
-    public void registerIcons(IconRegister par1IconRegister) {
-    	this.itemIcon = par1IconRegister.registerIcon(Reference.MOD_ID + ":" + this.getIconString());
+    public void registerIcons(IconRegister register) {
+    	//this.itemIcon = register.registerIcon(Reference.MOD_ID + ":" + this.getIconString());
+		//use the code beneath until fel creates proper sprites
+		if (this.itemID == ModItems.itemFurHat.itemID) this.itemIcon = register.registerIcon("chainmail_helmet");
+		else if (this.itemID == ModItems.itemFurCoat.itemID) this.itemIcon = register.registerIcon("chainmail_chestplate");
+		else if (this.itemID == ModItems.itemFurPants.itemID) this.itemIcon = register.registerIcon("chainmail_leggings");
+		else if (this.itemID == ModItems.itemFurBoots.itemID) this.itemIcon = register.registerIcon("chainmail_boots");
+		
     }
 	
 	@Override
