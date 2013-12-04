@@ -25,9 +25,9 @@ public class Register {
 		LanguageRegistry.addName(ModItems.itemIceBow, "Ukkungawok");
 		LanguageRegistry.addName(ModItems.itemIceArrow, "Frozen Arrow");
 		LanguageRegistry.addName(ModItems.itemHide, "Hide (WIP)");
-		LanguageRegistry.addName(ModItems.itemFurHat, "Fur Hat");
+		LanguageRegistry.addName(ModItems.itemFurHat, "Fur Hood");
 		LanguageRegistry.addName(ModItems.itemFurCoat, "Fur Coat");
-		LanguageRegistry.addName(ModItems.itemFurPants, "Fur Pants");
+		LanguageRegistry.addName(ModItems.itemFurPants, "Fur Leggings");
 		LanguageRegistry.addName(ModItems.itemFurBoots, "Fur Boots");
 		
 		//Entities
