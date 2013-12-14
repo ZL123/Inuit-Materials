@@ -1,4 +1,4 @@
-package inuitMaterials.entity;
+package inuitMaterials.client.render;
 
 import inuitMaterials.lib.Reference;
 import net.minecraft.client.renderer.OpenGlHelper;

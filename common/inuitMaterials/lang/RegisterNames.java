@@ -7,7 +7,7 @@ import inuitMaterials.lib.Reference;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-public class Register {
+public class RegisterNames {
 	
 	public static void load() {
 		
@@ -29,6 +29,7 @@ public class Register {
 		LanguageRegistry.addName(ModItems.itemFurCoat, "Fur Coat");
 		LanguageRegistry.addName(ModItems.itemFurPants, "Fur Leggings");
 		LanguageRegistry.addName(ModItems.itemFurBoots, "Fur Boots");
+		LanguageRegistry.addName(ModItems.itemCarving, "Carving");
 		
 		//Entities
 		LanguageRegistry.instance().addStringLocalization("entity." + Reference.MOD_ID + ".iceArrow.name", "Frozen Arrow");

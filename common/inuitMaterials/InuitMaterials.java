@@ -1,10 +1,10 @@
 package inuitMaterials;
 
 import inuitMaterials.block.ModBlocks;
+import inuitMaterials.client.entity.ModEntities;
 import inuitMaterials.config.ConfigLoader;
-import inuitMaterials.entity.ModEntities;
 import inuitMaterials.item.ModItems;
-import inuitMaterials.lang.Register;
+import inuitMaterials.lang.RegisterNames;
 import inuitMaterials.lib.Reference;
 import inuitMaterials.proxy.CommonProxy;
 import cpw.mods.fml.common.Mod;
@@ -46,7 +46,7 @@ public class InuitMaterials {
 		
 		ModEntities.load();
 		
-		Register.load();
+		RegisterNames.load();
 		
 	}
 	

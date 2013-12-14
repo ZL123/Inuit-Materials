@@ -1,13 +1,10 @@
 package inuitMaterials.item;
 
 import inuitMaterials.config.ConfigSettings;
-import inuitMaterials.entity.EntityHide;
-import inuitMaterials.entity.EntityIceArrow;
 import inuitMaterials.lib.Reference;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.EnumHelper;
-import cpw.mods.fml.common.registry.EntityRegistry;
 
 public class ModItems {
 	
@@ -20,6 +17,7 @@ public class ModItems {
 	public static Item itemFurCoat;
 	public static Item itemFurPants;
 	public static Item itemFurBoots;
+	public static Item itemCarving;
 	
 	public static void init() {
 		
@@ -33,9 +31,7 @@ public class ModItems {
 		itemFurCoat = new ItemFurCoat(ConfigSettings.furCoatID, materialFur, 0, 1).setTextureName("furCoat").setUnlocalizedName("furCoat");
 		itemFurPants = new ItemFurCoat(ConfigSettings.furPantsID, materialFur, 0, 2).setTextureName("furPants").setUnlocalizedName("furPants");
 		itemFurBoots = new ItemFurCoat(ConfigSettings.furBootsID, materialFur, 0, 3).setTextureName("furBoots").setUnlocalizedName("furBoots");
-		
-		EntityRegistry.registerGlobalEntityID(EntityIceArrow.class, "iceArrow", EntityRegistry.findGlobalUniqueEntityId());
-		EntityRegistry.registerGlobalEntityID(EntityHide.class, "hide", EntityRegistry.findGlobalUniqueEntityId());
+		itemCarving = new ItemCarving(ConfigSettings.carvingID).setTextureName(Reference.MOD_ID + ":carving").setUnlocalizedName("carving");
 		
 	}
 	

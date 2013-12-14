@@ -1,9 +1,9 @@
 package inuitMaterials.proxy;
 
-import inuitMaterials.entity.EntityHide;
-import inuitMaterials.entity.EntityIceArrow;
-import inuitMaterials.entity.RenderHide;
-import inuitMaterials.entity.RenderIceArrow;
+import inuitMaterials.client.entity.EntityHide;
+import inuitMaterials.client.entity.EntityIceArrow;
+import inuitMaterials.client.render.RenderHide;
+import inuitMaterials.client.render.RenderIceArrow;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 
 public class ClientProxy extends CommonProxy {

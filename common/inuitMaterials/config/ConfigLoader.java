@@ -26,6 +26,7 @@ public class ConfigLoader {
 		ConfigSettings.furCoatID = config.getItem("Fur Coat ID", DefaultIDs.furCoatID).getInt();
 		ConfigSettings.furPantsID = config.getItem("Fur Leggings ID", DefaultIDs.furPantsID).getInt();
 		ConfigSettings.furBootsID = config.getItem("Fur Boots ID", DefaultIDs.furBootsID).getInt();
+		ConfigSettings.carvingID = config.getItem("Carving ID", DefaultIDs.carvingID).getInt();
 		
 		
 		//Durability

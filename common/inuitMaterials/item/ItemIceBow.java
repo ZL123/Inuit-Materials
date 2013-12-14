@@ -1,7 +1,7 @@
 package inuitMaterials.item;
 
+import inuitMaterials.client.entity.EntityIceArrow;
 import inuitMaterials.config.ConfigSettings;
-import inuitMaterials.entity.EntityIceArrow;
 import inuitMaterials.lib.Reference;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;

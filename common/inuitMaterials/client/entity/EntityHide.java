@@ -1,4 +1,4 @@
-package inuitMaterials.entity;
+package inuitMaterials.client.entity;
 
 import inuitMaterials.item.ModItems;
 import net.minecraft.entity.Entity;

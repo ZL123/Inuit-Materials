@@ -1,6 +1,6 @@
 package inuitMaterials.item;
 
-import inuitMaterials.entity.EntityHide;
+import inuitMaterials.client.entity.EntityHide;
 import net.minecraft.entity.EntityHanging;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemHangingEntity;

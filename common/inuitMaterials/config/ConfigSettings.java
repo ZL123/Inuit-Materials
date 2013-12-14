@@ -14,6 +14,7 @@ public class ConfigSettings {
 	public static int furCoatID;
 	public static int furPantsID;
 	public static int furBootsID;
+	public static int carvingID;
 	
 	//Durability
 	public static int spadeSodDurability;

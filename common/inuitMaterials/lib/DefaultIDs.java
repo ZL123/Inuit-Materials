@@ -15,10 +15,13 @@ public class DefaultIDs {
 	public static final int furCoatID = 8455;
 	public static final int furPantsID = 8456;
 	public static final int furBootsID = 8457;
+	public static final int carvingID = 8458;
 	
 	
 	//Durability
 	public static final int spadeSodDurability = 512;
 	public static final int iceBowDurability = 768;
+
+
 	
 }
