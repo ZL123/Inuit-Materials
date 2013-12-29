@@ -33,6 +33,7 @@ public class ConfigLoader {
 		ConfigSettings.spadeSodDurability = config.get("Durability", "Sodding Spade Durability", DefaultIDs.spadeSodDurability).getInt();
 		ConfigSettings.iceBowDurability = config.get("Durability", "Ukkungawok Durability", DefaultIDs.iceBowDurability).getInt();
 		
+		config.save();
 		
 	}
 	
