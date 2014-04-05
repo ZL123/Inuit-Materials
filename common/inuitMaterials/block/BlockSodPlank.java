@@ -5,23 +5,24 @@ import inuitMaterials.lib.Reference;
 import java.util.List;
 
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Icon;
+import net.minecraft.util.IIcon;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockSodPlank extends BlockIM {
 	
 	@SideOnly(Side.CLIENT)
-	private Icon iconOak;
+	private IIcon IconOak;
 	@SideOnly(Side.CLIENT)
-	private Icon iconPine;
+	private IIcon IconPine;
 	@SideOnly(Side.CLIENT)
-	private Icon iconBirch;
+	private IIcon IconBirch;
 	@SideOnly(Side.CLIENT)
-	private Icon iconJungle;
+	private IIcon IconJungle;
 	
 	public static final int oakMetaNumber = 0;
 	public static final int pineMetaNumber = 1;
@@ -31,31 +32,31 @@ public class BlockSodPlank extends BlockIM {
 	public static final String[] BLOCK_NAMES = {"Sod Oak Planks", "Sod Spruce Planks", "Sod Birch Planks", "Sod Jungle Planks"};
 	
 	
-	public BlockSodPlank(int id) {
-		super(id, Material.wood);
+	public BlockSodPlank() {
+		super(Material.wood);
 		this.setHardness(2F);
 		this.setResistance(15F);
-		this.setCreativeTab(CreativeTabs.tabBlock);
+		this.setBlockTextureName("sod");
 	}
 
 	@SideOnly(Side.CLIENT)
-	public Icon getIcon(int side, int meta) {
-		switch(meta)
-		{
-		case oakMetaNumber: return iconOak;
-		case pineMetaNumber: return iconPine;
-		case birchMetaNumber: return iconBirch;
-		case jungleMetaNumber: return iconJungle;
-		default: return iconOak;
+	public IIcon getIIcon(int side, int meta) {
+		switch(meta) {
+		case oakMetaNumber: return IconOak;
+		case pineMetaNumber: return IconPine;
+		case birchMetaNumber: return IconBirch;
+		case jungleMetaNumber: return IconJungle;
+		default: return IconOak;
 		}
 	}
 	
+	@Override
 	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister register) {
-		iconOak = register.registerIcon(Reference.MOD_ID + ":" + "sodOak");
-		iconPine = register.registerIcon(Reference.MOD_ID + ":" + "sodPine");
-		iconBirch = register.registerIcon(Reference.MOD_ID + ":" + "sodBirch");
-		iconJungle = register.registerIcon(Reference.MOD_ID + ":" + "sodJungle");
+	public void registerBlockIcons(IIconRegister register) {
+		IconOak = register.registerIcon(Reference.MOD_ID + ":" + this.getTextureName() + "Oak");
+		IconPine = register.registerIcon(Reference.MOD_ID + ":" + this.getTextureName() + "Pine");
+		IconBirch = register.registerIcon(Reference.MOD_ID + ":" + this.getTextureName() + "Birch");
+		IconJungle = register.registerIcon(Reference.MOD_ID + ":" + this.getTextureName() + "Jungle");
 	}
 	
 	@Override
@@ -65,11 +66,12 @@ public class BlockSodPlank extends BlockIM {
 	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@SideOnly(Side.CLIENT)
-	public void getSubBlocks(int id, CreativeTabs tabs, List list)
+	@Override
+	public void getSubBlocks(Item item, CreativeTabs tabs, List list)
 	{
 		for(int i = 0; i < BLOCK_NAMES.length; i++)
 		{
-			list.add(new ItemStack(id, 1, i));
+			list.add(new ItemStack(item, 1, i));
 		}
 	}
 	

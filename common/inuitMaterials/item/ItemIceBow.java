@@ -1,10 +1,10 @@
 package inuitMaterials.item;
 
-import inuitMaterials.client.entity.EntityIceArrow;
+import inuitMaterials.InuitMaterials;
 import inuitMaterials.config.ConfigSettings;
+import inuitMaterials.entity.EntityIceArrow;
 import inuitMaterials.lib.Reference;
-import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
@@ -12,7 +12,7 @@ import net.minecraft.item.EnumAction;
 import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
-import net.minecraft.util.Icon;
+import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ArrowLooseEvent;
@@ -24,14 +24,13 @@ public class ItemIceBow extends ItemBow {
 	
 	public static final String[] bowPullIconNameArray = new String[] {"drawn_0", "drawn_1", "drawn_2"};
 	@SideOnly(Side.CLIENT)
-    private Icon[] iconArray;
+    private IIcon[] iconArray;
 	
-	public ItemIceBow(int par1) {
-		super(par1);
+	public ItemIceBow() {
 		maxStackSize = 1;
 		setMaxDamage(ConfigSettings.iceBowDurability - 1);
 		isDamageable();
-		this.setCreativeTab(CreativeTabs.tabCombat);
+		this.setCreativeTab(InuitMaterials.tabInuitMaterials);
 		setFull3D();
 	
 	}
@@ -51,7 +50,7 @@ public class ItemIceBow extends ItemBow {
 
         boolean flag = par3EntityPlayer.capabilities.isCreativeMode || EnchantmentHelper.getEnchantmentLevel(Enchantment.infinity.effectId, par1ItemStack) > 0;
 
-        if (flag || par3EntityPlayer.inventory.hasItem(ModItems.itemIceArrow.itemID))
+        if (flag || par3EntityPlayer.inventory.hasItem(ModItems.itemIceArrow))
         {
             float f = (float)j / 20.0F;
             f = (f * f + f * 2.0F) / 3.0F;
@@ -101,7 +100,7 @@ public class ItemIceBow extends ItemBow {
             }
             else
             {
-                par3EntityPlayer.inventory.consumeInventoryItem(ModItems.itemIceArrow.itemID);
+                par3EntityPlayer.inventory.consumeInventoryItem(ModItems.itemIceArrow);
             }
 
             if (!par2World.isRemote)
@@ -127,7 +126,7 @@ public class ItemIceBow extends ItemBow {
             return event.result;
         }
 
-        if (par3EntityPlayer.capabilities.isCreativeMode || par3EntityPlayer.inventory.hasItem(ModItems.itemIceArrow.itemID))
+        if (par3EntityPlayer.capabilities.isCreativeMode || par3EntityPlayer.inventory.hasItem(ModItems.itemIceArrow))
         {
             par3EntityPlayer.setItemInUse(par1ItemStack, this.getMaxItemUseDuration(par1ItemStack));
         }
@@ -137,10 +136,10 @@ public class ItemIceBow extends ItemBow {
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-    public void registerIcons(IconRegister par1IconRegister)
+    public void registerIcons(IIconRegister par1IconRegister)
     {
         this.itemIcon = par1IconRegister.registerIcon(Reference.MOD_ID + ":ukkungawok");
-        this.iconArray = new Icon[bowPullIconNameArray.length];
+        this.iconArray = new IIcon[bowPullIconNameArray.length];
 
         for (int i = 0; i < this.iconArray.length; ++i)
         {
@@ -151,11 +150,11 @@ public class ItemIceBow extends ItemBow {
 	@SideOnly(Side.CLIENT)
 	public String getItemDisplayName(ItemStack stack)
     {
-        return EnumChatFormatting.BLUE + super.getItemDisplayName(stack);
+        return EnumChatFormatting.BLUE + super.getItemStackDisplayName(stack);
     }
 	
 	@SideOnly(Side.CLIENT)
-	public Icon getIcon(ItemStack stack, int renderPass, EntityPlayer player, ItemStack usingItem, int useRemaining)
+	public IIcon getIcon(ItemStack stack, int renderPass, EntityPlayer player, ItemStack usingItem, int useRemaining)
     {
 		if (usingItem != null)
         {

@@ -2,8 +2,8 @@
 {
 	"modid": "InuitMaterials",
 	"name": "Inuit Materials",
-	"version": "0.0.0a",
-	"mcversion": "1.6.2",
+	"version": "0.1.0",
+	"mcversion": "1.7.2",
 	"description": "An addon mod to Millénaire requiring the Inuits culture from the Millénaire Library.",
 	"authorList": [
 	  "felinoel",

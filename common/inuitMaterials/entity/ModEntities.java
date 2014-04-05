@@ -1,4 +1,4 @@
-package inuitMaterials.client.entity;
+package inuitMaterials.entity;
 
 import inuitMaterials.InuitMaterials;
 import cpw.mods.fml.common.registry.EntityRegistry;

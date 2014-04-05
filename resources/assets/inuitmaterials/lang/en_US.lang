@@ -1,0 +1,18 @@
+tile.sodPlank.oak.name=Sod Oak Planks
+tile.sodPlank.pine.name=Sod Spruce Planks
+tile.sodPlank.birch.name=Sod Birch Planks
+tile.sodPlank.jungle.name=Sod Jungle Planks
+
+item.spadeSodding.name=Sodding Spade
+item.iceBow.name=Ukkungawok
+item.iceArrow.name=Frozen Arrow
+item.hide.name=Hide (WIP)
+item.furHat.name=Fur Hood
+item.furCoat.name=Fur Coat
+item.furPants.name=Fur Leggings
+item.furBoots.name=Fur Boots
+item.carving.name=Carving (WIP)
+
+entity.InuitMaterials.iceArrow.name=Frozen Arrow
+
+itemGroup.inuitMaterials=Inuit Materials

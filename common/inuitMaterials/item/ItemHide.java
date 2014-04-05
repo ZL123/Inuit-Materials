@@ -1,6 +1,7 @@
 package inuitMaterials.item;
 
-import inuitMaterials.client.entity.EntityHide;
+import inuitMaterials.InuitMaterials;
+import inuitMaterials.entity.EntityHide;
 import net.minecraft.entity.EntityHanging;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemHangingEntity;
@@ -10,8 +11,9 @@ import net.minecraft.world.World;
 
 public class ItemHide extends ItemHangingEntity {
 
-	public ItemHide(int par1) {
-		super(par1, EntityHide.class);
+	public ItemHide() {
+		super(EntityHide.class);
+		this.setCreativeTab(InuitMaterials.tabInuitMaterials);
 	}
 	
 	@Override

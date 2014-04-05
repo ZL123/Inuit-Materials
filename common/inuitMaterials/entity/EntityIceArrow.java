@@ -1,12 +1,11 @@
-package inuitMaterials.client.entity;
+package inuitMaterials.entity;
 
 import inuitMaterials.item.ModItems;
-import inuitMaterials.tick.ServerTickHandler;
 
 import java.util.List;
 
 import net.minecraft.block.Block;
-import net.minecraft.enchantment.EnchantmentThorns;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
@@ -14,9 +13,10 @@ import net.minecraft.entity.IProjectile;
 import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.packet.Packet70GameEvent;
+import net.minecraft.network.play.server.S2BPacketChangeGameState;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.AxisAlignedBB;
@@ -33,7 +33,7 @@ public class EntityIceArrow extends Entity implements IProjectile {
 	private int xTile = -1;
     private int yTile = -1;
     private int zTile = -1;
-    private int inTile;
+    private Block inTile;
     private int inData;
     private boolean inGround;
     public int canBePickedUp;
@@ -208,12 +208,12 @@ public class EntityIceArrow extends Entity implements IProjectile {
             this.prevRotationPitch = this.rotationPitch = (float)(Math.atan2(this.motionY, (double)f) * 180.0D / Math.PI);
         }
 
-        int i = this.worldObj.getBlockId(this.xTile, this.yTile, this.zTile);
+        Block block = this.worldObj.getBlock(this.xTile, this.yTile, this.zTile);
 
-        if (i > 0)
+        if (block != Blocks.air)
         {
-            Block.blocksList[i].setBlockBoundsBasedOnState(this.worldObj, this.xTile, this.yTile, this.zTile);
-            AxisAlignedBB axisalignedbb = Block.blocksList[i].getCollisionBoundingBoxFromPool(this.worldObj, this.xTile, this.yTile, this.zTile);
+            block.setBlockBoundsBasedOnState(this.worldObj, this.xTile, this.yTile, this.zTile);
+            AxisAlignedBB axisalignedbb = block.getCollisionBoundingBoxFromPool(this.worldObj, this.xTile, this.yTile, this.zTile);
 
             if (axisalignedbb != null && axisalignedbb.isVecInside(this.worldObj.getWorldVec3Pool().getVecFromPool(this.posX, this.posY, this.posZ)))
             {
@@ -228,10 +228,10 @@ public class EntityIceArrow extends Entity implements IProjectile {
 
         if (this.inGround)
         {
-            int j = this.worldObj.getBlockId(this.xTile, this.yTile, this.zTile);
+            Block block2 = this.worldObj.getBlock(this.xTile, this.yTile, this.zTile);
             int k = this.worldObj.getBlockMetadata(this.xTile, this.yTile, this.zTile);
 
-            if (j == this.inTile && k == this.inData)
+            if (block2 == this.inTile && k == this.inData)
             {
                 ++this.ticksInGround;
 
@@ -255,7 +255,7 @@ public class EntityIceArrow extends Entity implements IProjectile {
             ++this.ticksInAir;
             Vec3 vec3 = this.worldObj.getWorldVec3Pool().getVecFromPool(this.posX, this.posY, this.posZ);
             Vec3 vec31 = this.worldObj.getWorldVec3Pool().getVecFromPool(this.posX + this.motionX, this.posY + this.motionY, this.posZ + this.motionZ);
-            MovingObjectPosition movingobjectposition = this.worldObj.rayTraceBlocks_do_do(vec3, vec31, false, true);
+            MovingObjectPosition movingobjectposition = this.worldObj.func_147447_a(vec3, vec31, false, true, false);
             vec3 = this.worldObj.getWorldVec3Pool().getVecFromPool(this.posX, this.posY, this.posZ);
             vec31 = this.worldObj.getWorldVec3Pool().getVecFromPool(this.posX + this.motionX, this.posY + this.motionY, this.posZ + this.motionZ);
 
@@ -327,10 +327,12 @@ public class EntityIceArrow extends Entity implements IProjectile {
                     DamageSource damagesource = null;
                     
                     Entity enthit = movingobjectposition.entityHit;
+                    int witherAmplifier = this.rand.nextInt(4);
+                    int witherDuration = this.rand.nextInt(100) + 20;
                     if (enthit instanceof EntityLiving) {
-                    	((EntityLivingBase) enthit).addPotionEffect(new PotionEffect(Potion.weakness.id, 100, 1));	
+                    	((EntityLivingBase) enthit).addPotionEffect(new PotionEffect(Potion.wither.id, witherDuration, witherAmplifier));	
                     } else if (enthit instanceof EntityPlayer) {
-                    	ServerTickHandler.hitByUkkungawok = (EntityPlayer)enthit;
+                    	if (!worldObj.isRemote) ((EntityPlayer) enthit).addPotionEffect(new PotionEffect(Potion.wither.id, witherDuration, witherAmplifier));
                     }
 
                     if (this.shootingEntity == null)
@@ -368,14 +370,15 @@ public class EntityIceArrow extends Entity implements IProjectile {
                                 }
                             }
 
-                            if (this.shootingEntity != null)
+                            if (this.shootingEntity != null && this.shootingEntity instanceof EntityLivingBase)
                             {
-                                EnchantmentThorns.func_92096_a(this.shootingEntity, entitylivingbase, this.rand);
+                                EnchantmentHelper.func_151384_a(entitylivingbase, this.shootingEntity);
+                                EnchantmentHelper.func_151385_b((EntityLivingBase)this.shootingEntity, entitylivingbase);
                             }
 
                             if (this.shootingEntity != null && movingobjectposition.entityHit != this.shootingEntity && movingobjectposition.entityHit instanceof EntityPlayer && this.shootingEntity instanceof EntityPlayerMP)
                             {
-                                ((EntityPlayerMP)this.shootingEntity).playerNetServerHandler.sendPacketToPlayer(new Packet70GameEvent(6, 0));
+                                ((EntityPlayerMP)this.shootingEntity).playerNetServerHandler.sendPacket(new S2BPacketChangeGameState(6, 0.0F));
                             }
                         }
 
@@ -401,7 +404,7 @@ public class EntityIceArrow extends Entity implements IProjectile {
                     this.xTile = movingobjectposition.blockX;
                     this.yTile = movingobjectposition.blockY;
                     this.zTile = movingobjectposition.blockZ;
-                    this.inTile = this.worldObj.getBlockId(this.xTile, this.yTile, this.zTile);
+                    this.inTile = this.worldObj.getBlock(this.xTile, this.yTile, this.zTile);
                     this.inData = this.worldObj.getBlockMetadata(this.xTile, this.yTile, this.zTile);
                     this.motionX = (double)((float)(movingobjectposition.hitVec.xCoord - this.posX));
                     this.motionY = (double)((float)(movingobjectposition.hitVec.yCoord - this.posY));
@@ -415,9 +418,9 @@ public class EntityIceArrow extends Entity implements IProjectile {
                     this.arrowShake = 7;
                     this.setIsCritical(false);
 
-                    if (this.inTile != 0)
+                    if (this.inTile != Blocks.air)
                     {
-                        Block.blocksList[this.inTile].onEntityCollidedWithBlock(this.worldObj, this.xTile, this.yTile, this.zTile, this);
+                        inTile.onEntityCollidedWithBlock(this.worldObj, this.xTile, this.yTile, this.zTile, this);
                     }
                 }
             }
@@ -477,7 +480,7 @@ public class EntityIceArrow extends Entity implements IProjectile {
             this.motionZ *= (double)f4;
             this.motionY -= (double)f1;
             this.setPosition(this.posX, this.posY, this.posZ);
-            this.doBlockCollisions();
+            this.func_145775_I();
         }
     }
     
@@ -486,7 +489,7 @@ public class EntityIceArrow extends Entity implements IProjectile {
         par1NBTTagCompound.setShort("xTile", (short)this.xTile);
         par1NBTTagCompound.setShort("yTile", (short)this.yTile);
         par1NBTTagCompound.setShort("zTile", (short)this.zTile);
-        par1NBTTagCompound.setByte("inTile", (byte)this.inTile);
+        par1NBTTagCompound.setByte("inTile", (byte)Block.getIdFromBlock(inTile));
         par1NBTTagCompound.setByte("inData", (byte)this.inData);
         par1NBTTagCompound.setByte("shake", (byte)this.arrowShake);
         par1NBTTagCompound.setByte("inGround", (byte)(this.inGround ? 1 : 0));
@@ -499,7 +502,7 @@ public class EntityIceArrow extends Entity implements IProjectile {
         this.xTile = par1NBTTagCompound.getShort("xTile");
         this.yTile = par1NBTTagCompound.getShort("yTile");
         this.zTile = par1NBTTagCompound.getShort("zTile");
-        this.inTile = par1NBTTagCompound.getByte("inTile") & 255;
+        this.inTile = Block.getBlockById(par1NBTTagCompound.getByte("inTile") & 255);
         this.inData = par1NBTTagCompound.getByte("inData") & 255;
         this.arrowShake = par1NBTTagCompound.getByte("shake") & 255;
         this.inGround = par1NBTTagCompound.getByte("inGround") == 1;

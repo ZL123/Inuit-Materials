@@ -1,11 +1,12 @@
 package inuitMaterials.item;
 
+import inuitMaterials.InuitMaterials;
 import net.minecraft.item.Item;
 
 public class ItemIM extends Item {
 
-	public ItemIM(int par1) {
-		super(par1);
+	public ItemIM() {
+		this.setCreativeTab(InuitMaterials.tabInuitMaterials);
 	}
 
 }
