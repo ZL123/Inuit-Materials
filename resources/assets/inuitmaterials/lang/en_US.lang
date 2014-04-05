@@ -2,6 +2,8 @@ tile.sodPlank.oak.name=Sod Oak Planks
 tile.sodPlank.pine.name=Sod Spruce Planks
 tile.sodPlank.birch.name=Sod Birch Planks
 tile.sodPlank.jungle.name=Sod Jungle Planks
+tile.sodPlank.acacia.name=Sod Acacia Planks
+tile.sodPlank.darkOak.name=Sod Dark Oak Planks
 
 item.spadeSodding.name=Sodding Spade
 item.iceBow.name=Ukkungawok

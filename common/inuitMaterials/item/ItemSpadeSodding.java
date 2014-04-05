@@ -66,6 +66,22 @@ public class ItemSpadeSodding extends ItemIM {
 						}
 						return true;
 					}
+					else if (meta == BlockSodPlank.acaciaMetaNumber) {
+						world.setBlock(x, y, z, ModBlocks.blockSodPlank, BlockSodPlank.acaciaMetaNumber, Reference.SET_BLOCK_FLAG);
+						stack.damageItem(1, entityplayer);
+						if (!entityplayer.capabilities.isCreativeMode) {
+							entityplayer.inventory.consumeInventoryItem(ItemBlock.getItemFromBlock(Blocks.dirt));
+						}
+						return true;
+					}
+					else if (meta == BlockSodPlank.darkOakMetaNumber) {
+						world.setBlock(x, y, z, ModBlocks.blockSodPlank, BlockSodPlank.darkOakMetaNumber, Reference.SET_BLOCK_FLAG);
+						stack.damageItem(1, entityplayer);
+						if (!entityplayer.capabilities.isCreativeMode) {
+							entityplayer.inventory.consumeInventoryItem(ItemBlock.getItemFromBlock(Blocks.dirt));
+						}
+						return true;
+					}
 				}
 			}
 		}
