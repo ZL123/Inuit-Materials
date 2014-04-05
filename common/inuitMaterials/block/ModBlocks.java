@@ -1,8 +1,7 @@
 package inuitMaterials.block;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-import inuitMaterials.config.ConfigSettings;
 import net.minecraft.block.Block;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ModBlocks {
 	
@@ -12,7 +11,7 @@ public class ModBlocks {
 	public static void init() {
 		
 		//Set stuff
-		blockSodPlank = new BlockSodPlank(ConfigSettings.sodPlankID).setUnlocalizedName("sodPlank");
+		blockSodPlank = new BlockSodPlank().setBlockName("sodPlank");
 		
 		//Register stuff
 		GameRegistry.registerBlock(blockSodPlank, ItemBlockSodPlank.class, "sodPlanks");

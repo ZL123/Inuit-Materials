@@ -1,6 +1,6 @@
 package inuitMaterials.client.render;
 
-import inuitMaterials.client.entity.EntityIceArrow;
+import inuitMaterials.entity.EntityIceArrow;
 import inuitMaterials.lib.Reference;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.entity.Render;

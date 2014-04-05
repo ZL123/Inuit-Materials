@@ -1,4 +1,4 @@
-package inuitMaterials.client.entity;
+package inuitMaterials.entity;
 
 import inuitMaterials.item.ModItems;
 import net.minecraft.entity.Entity;
@@ -11,7 +11,9 @@ public class EntityCarving extends Entity {
 		super(par1World);
 	}
 
-	protected void entityInit() {}
+	protected void entityInit() {
+		this.dataWatcher.addObject(17, new Integer(0));
+	}
 	
 	public int getWidthPixels() {
 		return 16;
@@ -30,7 +32,7 @@ public class EntityCarving extends Entity {
 	}
 	
     public void onBroken(Entity par1Entity) {
-    	this.dropItem(ModItems.itemCarving.itemID, 1);
+    	this.dropItem(ModItems.itemCarving, 1);
     	this.setDead();
     }
 
